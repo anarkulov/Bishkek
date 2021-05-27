@@ -12,12 +12,16 @@
         android:id="@+id/tabLayoutId"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        app:tabMode="scrollable"
+        app:tabIndicatorHeight="0dp"
+        android:background="@color/blue_500"
+        style="@style/com.google.android.material.tabs.TabLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabTextColor="@android:color/white"
-        android:background="@drawable/tab_background"
-        app:tabMode="scrollable"
         />
 
     <androidx.viewpager.widget.ViewPager

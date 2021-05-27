@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".fragments.RestaurantFragment">
 
-    <ListView
-        android:id="@+id/listItemViewId"
+    <ExpandableListView
+        android:id="@+id/ExpandableListViewId"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,5 +14,6 @@
         android:padding="4dp"
         android:background="@color/blue_500"
         android:divider="#00000000"
-        android:dividerHeight="4dp"/>
+        android:dividerHeight="4dp"
+        android:groupIndicator="@null"/>
 </FrameLayout>

@@ -1,5 +1,6 @@
 package com.erzhan.bishkek
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
@@ -31,5 +32,10 @@ class MainActivity : AppCompatActivity() {
 
         viewPager.adapter = placeViewPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
+
+        for (i in 0 until tabLayout.tabCount) {
+            val tab = tabLayout.getTabAt(i)
+            tab!!.customView = placeViewPagerAdapter.getTabView(i, this)
+        }
     }
 }

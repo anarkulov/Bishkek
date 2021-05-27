@@ -1,16 +1,19 @@
 package com.erzhan.bishkek.adapters
 
+import android.R
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import java.util.*
-import kotlin.collections.ArrayList
+
 
 class PlaceViewPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
-    var fragmentList: ArrayList<Fragment> = ArrayList()
-    var fragmentTitles: ArrayList<String> = ArrayList()
-    var fl: List<String> = ArrayList()
+    private var fragmentList: ArrayList<Fragment> = ArrayList()
+    private var fragmentTitles: ArrayList<String> = ArrayList()
 
     override fun getCount(): Int {
         return fragmentList.size
@@ -27,5 +30,13 @@ class PlaceViewPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAda
     fun addFragment(fragment: Fragment, title: String) {
         fragmentList.add(fragment)
         fragmentTitles.add(title)
+    }
+
+    fun getTabView(position: Int, context: Context): View {
+        // Given you have a custom layout in `res/layout/custom_tab.xml` with a TextView and ImageView
+        val v: View = LayoutInflater.from(context).inflate(com.erzhan.bishkek.R.layout.custom_tab, null)
+        val tv = v.findViewById(com.erzhan.bishkek.R.id.customTabTextViewId) as TextView
+        tv.text = fragmentTitles[position]
+        return v
     }
 }

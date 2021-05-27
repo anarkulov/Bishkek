@@ -1,63 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tool="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/list_item_height"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:minHeight="@dimen/list_item_height"
     android:background="@drawable/item_background">
 
-    <ImageView
-        android:id="@+id/placeImageId"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_width="@dimen/list_image_width"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/bishkek_panorama"
-        />
-
     <LinearLayout
-        android:id="@+id/textContainerId"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
-
-            <TextView
-                android:id="@+id/nametTextViewId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tool:text="one"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                />
-
-            <TextView
-                android:id="@+id/descriptionTextViewId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                tool:text="eno" />
-
-        </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_more"
+            android:src="@drawable/ic_info"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/placeDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Description"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/textColor"
             android:layout_gravity="center"
             />
 
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_location"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/placeLocationTextViewId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:text="location"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/purple_200" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/placePhoneLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_phone"/>
+
+        <TextView
+            android:id="@+id/placePhoneTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:textSize="12sp"
+            android:text="07000000"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/purple_200" />
     </LinearLayout>
 
 </LinearLayout>

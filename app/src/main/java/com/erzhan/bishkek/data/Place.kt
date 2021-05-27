@@ -1,6 +1,6 @@
 package com.erzhan.bishkek.data
 
-class Place constructor(name: String, location: String) {
+class Place constructor(name: String, district: String, imageResourceId: Int, description: String, location: String, mapLocation: String) {
 
     var name: String = ""
         get() {
@@ -9,6 +9,22 @@ class Place constructor(name: String, location: String) {
         set(value) {
             field = value
         }
+    var district: String = ""
+        get() {
+            return field
+        }
+        set(value) {
+            field = value
+        }
+
+    var description: String = ""
+        get() {
+            return field
+        }
+        set(value) {
+            field = value
+        }
+
     var location: String = ""
         get() {
             return field
@@ -17,23 +33,40 @@ class Place constructor(name: String, location: String) {
             field = value
         }
 
-    private val imageProvide = -1
-    var imageResourceId: Int = -1
+    var mapLocation: String = ""
+        get() {
+            return field
+        }
+        set(value) {
+            field = value
+        }
+
+    var imageResourceId: Int
         get() {
             return field
         }
 
-    init {
-        this.name = name
-        this.location = location
+    private val phoneProvided = ""
+    var phoneNumber: String = ""
+        get() {
+            return field
+        }
+
+    constructor(name: String, district: String, imageResourceId: Int, description: String, location: String, mapLocation: String, phoneNumber: String) : this(name, district, imageResourceId, description, location, mapLocation) {
+        this.phoneNumber = phoneNumber
     }
 
-    constructor(name: String, location: String, imageResourceId: Int) : this(name, location) {
+    init {
+        this.name = name
+        this.district = district
+        this.description = description
+        this.location = location
+        this.mapLocation = mapLocation
         this.imageResourceId = imageResourceId
     }
 
-
-    fun hasImage(): Boolean {
-        return imageResourceId != imageProvide
+    fun hasPhone(): Boolean {
+        return phoneNumber != phoneProvided
     }
+
 }
