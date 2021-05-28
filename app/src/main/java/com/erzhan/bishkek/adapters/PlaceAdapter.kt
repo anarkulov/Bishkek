@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.bumptech.glide.Glide
 import com.erzhan.bishkek.R
 import com.erzhan.bishkek.data.Place
 
@@ -45,7 +46,12 @@ class PlaceAdapter(
         placeDistrict.text = place?.district;
 
         val placeImage = listView.findViewById<ImageView>(R.id.placeImageId)
-        placeImage.setImageResource(place!!.imageResourceId)
+
+        Glide
+            .with(context)
+            .load(place!!.imageResourceId)
+            .placeholder(R.drawable.image_placeholder)
+            .into(placeImage)
 
         return listView
     }
